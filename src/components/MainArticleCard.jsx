@@ -1,5 +1,5 @@
 import { Link } from "react-router"
-import calculateDaysAgo from '../utils/timeUtil'
+import calculateDaysAgo from '../utils/daysAgoUtil'
 
 export default function MainArticleCard ({currentArticle}) {
 

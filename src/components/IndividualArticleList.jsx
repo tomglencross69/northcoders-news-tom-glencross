@@ -2,6 +2,7 @@ import IndividualArticleCard from "./IndividualArticleCard"
 import { useParams} from "react-router"
 import { useEffect, useState } from "react"
 import { getAllArticles } from "../api"
+import CommentList from "./CommentList"
 
 export default function IndividualArticleList () {
 const {article_id} = useParams()
@@ -28,6 +29,7 @@ return (
       <ul className="individual-article-list-component">
       <p className="component-label">individual article list component</p>
       <IndividualArticleCard individualArticle={individualArticle}/>
+      <CommentList individualArticle={individualArticle}/>
       </ul>
     </div>
     )
