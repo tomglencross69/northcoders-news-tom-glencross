@@ -1,6 +1,8 @@
 import MainArticlesList from "./MainArticlesList";
+import IndividualArticleList from "./IndividualArticleList"
 import { getAllArticles } from "../api";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router";
 
 export default function StateManager() {
 const [articles, setArticles] = useState([])
@@ -11,7 +13,6 @@ useEffect(()=>{
     setIsLoading(true)
     getAllArticles()
     .then((fetchedArticles)=>{
-        console.log(fetchedArticles)
         return fetchedArticles
     })
     .then((articlesData) => {
