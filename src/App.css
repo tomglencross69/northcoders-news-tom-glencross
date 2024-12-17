@@ -11,7 +11,8 @@ color: rgb(69, 68, 68);
 display: flex;
 justify-content:flex-start;
 text-align:left;
-font-size: 0.7rem
+font-size: 0.7rem;
+list-style-type: none
 
 }
 
@@ -75,8 +76,14 @@ font-size: 0.7rem
   border: solid rgb(69, 68, 68);
   flex-direction: row;
   box-sizing: border-box;
-  
+  text-decoration: none;
 }
+
+#main-article-card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 
 .main-article-card-content{
   flex: 1;
@@ -110,6 +117,88 @@ font-size: 1rem;
 #main-article-card-vote-count{
   font-size: 0.9rem;
 }
+
+/*Individual article styling*/
+.individual-article-list-parent-component{
+  border: solid rgb(69, 68, 68);
+
+}
+
+.individual-article-list-component{
+  border: solid rgb(69, 68, 68);
+  list-style-type: none;
+}
+
+.individual-article-card-parent-component {
+  overflow: hidden;
+}
+
+.individual-article-card-component {
+  border: solid rgb(69, 68, 68);
+
+}
+
+#individual-article-card-content{
+ flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+#individual-article-card-title{
+  font-size: 2rem;
+  font-weight: bold;
+}
+#individual-article-card-author{
+  font-weight: bold;
+}
+#individual-article-card-image{
+
+  width: 400px;
+  height: auto;
+  object-fit: scale-down;
+  justify-content: flex-end;
+  align-items: center;
+  
+}
+#individual-article-card-comment-count{
+
+}
+#individual-article-card-vote-count{
+
+}
+#individual-article-card-body{
+  justify-content:center;
+}
+
+/*Comment styling*/
+
+.comment-list-parent-component {
+  border: solid rgb(69, 68, 68);
+}
+
+.comment-list-parent {
+
+}
+
+.commment-card-parent-component {
+  
+  list-style-type: none
+}
+
+.comment-card-component {
+  border: solid rgb(69, 68, 68);
+}
+
+.comment-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
 
 /*Footer styling*/
 .footer-component {

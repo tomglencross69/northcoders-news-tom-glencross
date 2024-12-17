@@ -5,6 +5,9 @@ import Footer from './components/Footer'
 import StateManager from './components/StateManager'
 import { Navigate } from 'react-router'
 import {Routes, Route} from "react-router"
+import MainArticlesList from './components/MainArticlesList'
+import IndividualArticleList from './components/IndividualArticleList'
+import CommentList from './components/CommentList'
 
 function App() {
 
@@ -14,8 +17,10 @@ function App() {
         <Header/>
         <Routes>
           <Route path ="/" element={<Navigate to="/articles"/>} />
+          <Route path="/articles" element={<StateManager/>}/>
+          <Route path ="/articles/:article_id" element={<IndividualArticleList/>}/>
+          <Route path ="/articles/:article_id/comments" element={<CommentList/>}/>
         </Routes>
-        <StateManager/>
         <Footer/>
       </div>
     </>

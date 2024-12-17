@@ -2,7 +2,7 @@ export default function IndividualArticleCard ({individualArticle}) {
     const date = new Date(individualArticle.created_at).toLocaleString('en-GB', {
         day: 'numeric',
         month: 'numeric',
-        year: 'numeric',
+        year: 'numeric'
       })
 
     return(
