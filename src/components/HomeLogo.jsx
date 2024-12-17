@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import homelogo from "../assets/northcodersnewslogo.png"
+import homelogo from "../assets/northcodersnewslogosmalltransparent.png"
 
 export default function HomeLogo() {
   return (
