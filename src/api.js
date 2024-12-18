@@ -27,3 +27,18 @@ export const getComments = (article_id) => {
         return response.data.comments
     })
 }
+
+export const updateArticleVotes = (article_id, down) => {
+    if (down) {
+        return northcodersNewsBaseURL
+        .patch(`/articles/${article_id}`, {inc_votes: -1})
+        .then(()=>{
+            console.log("article downvote updated")
+        })
+    }
+    return northcodersNewsBaseURL
+    .patch(`/articles/${article_id}`, {inc_votes: 1})
+    .then(()=>{
+        console.log("article vote updated")
+    })
+}
