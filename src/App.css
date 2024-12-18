@@ -241,6 +241,10 @@ font-size: 1rem;
   border: solid rgb(69, 68, 68);
 }
 
+.article-comment-form{
+  overflow: hidden;
+}
+
 /*Footer styling*/
 .footer-component {
   color: white;
