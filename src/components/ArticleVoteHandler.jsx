@@ -30,6 +30,7 @@ updateArticleVotes(article_id).catch(()=>{
 setLocalArticleVotes((votesAdded)=>{
     setError(null)
     disableUpButton()
+    setDownButtonDisabled(false)
     thankYouMessage()
     return localArticleVotes +1
 })
@@ -46,6 +47,7 @@ const handleClickDown = () => {
     setLocalArticleVotes(()=>{
         setError(null)
         disableDownButton()
+        setUpButtonDisabled(false)
         thankYouMessage()
         return localArticleVotes -1
     })

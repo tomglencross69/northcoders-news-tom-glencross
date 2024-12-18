@@ -232,6 +232,14 @@ font-size: 1rem;
   cursor: not-allowed;
 }
 
+/*Comment Form*/
+.comment-form-parent-component{
+
+}
+
+.comment-form-component {
+  border: solid rgb(69, 68, 68);
+}
 
 /*Footer styling*/
 .footer-component {

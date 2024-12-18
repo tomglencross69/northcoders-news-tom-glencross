@@ -42,3 +42,12 @@ export const updateArticleVotes = (article_id, down) => {
         console.log("article vote updated")
     })
 }
+
+export const postComment = (newComment, article_id) => {
+    console.log(article_id, "in api")
+    return northcodersNewsBaseURL
+    .post(`/articles/${article_id}/comments`, newComment)
+    .then(()=> {
+        console.log("comment posted")
+    })
+}

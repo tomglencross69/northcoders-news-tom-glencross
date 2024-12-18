@@ -15,7 +15,7 @@ export default function CommentCard ({currentComment}) {
             <p id="comment-card-author">by {currentComment.author}</p>
             <p id="comment-card-date">{date} </p>
             <p id="comment-card-vote-count">Votes ({currentComment.votes})</p>
-            <p id="comment-card-body">({currentComment.body})</p>
+            <p id="comment-card-body">{currentComment.body}</p>
             </div>
     </li>
     </div>
