@@ -16,6 +16,7 @@ useEffect(()=> {
     .then((fetchedArticle)=>{
         setIndividualArticle(fetchedArticle)
         setIsError(false)
+        setIsLoading(false)
     })
     .catch((error)=>{
         setIsError(true)
@@ -23,6 +24,9 @@ useEffect(()=> {
         console.log(error, 'error fetching individual article')
     })
 }, [])
+
+if (isLoading) return <p>Loading...</p>
+if (isError) return <p>Error fetching....</p>
     
 return (
         <div className="individual-article-list-parent-component">

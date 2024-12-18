@@ -4,7 +4,7 @@ export const UserContext = createContext()
 
 export const UserProvider = ({children}) => {
     //hardcoded default user
-    const [user, setUser] = useState("Tom")
+    const [user, setUser] = useState("tickle122")
     return (
         <UserContext.Provider value={{user, setUser}}>
             {children}
