@@ -199,6 +199,39 @@ font-size: 1rem;
   align-items: flex-start;
 }
 
+/*Article Vote Button*/
+.up-vote-button {
+  background-color: #77dc58; 
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.down-vote-button {
+  background-color: #9a3b3b; 
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.up-vote-button:disabled {
+  background-color: #d6d6d6; 
+  color: #9c9c9c; 
+  cursor: not-allowed;
+}
+
+.down-vote-button:disabled {
+  background-color: #d6d6d6; 
+  color: #9c9c9c; 
+  cursor: not-allowed;
+}
+
 
 /*Footer styling*/
 .footer-component {
