@@ -9,7 +9,6 @@ export default function CommentForm ({article_id}) {
   const {user} = useContext(UserContext)
   const [showThankYouMessage, setShowThankYouMessage] = useState(false)
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false)
-  const [optimisticComment, setOptimisticComment] = useState([])
 
   const disableSubmitButton = () => {
     setSubmitButtonDisabled(true)
