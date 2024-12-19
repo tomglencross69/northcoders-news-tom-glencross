@@ -9,7 +9,6 @@ export default function CommentForm ({article_id}) {
   const {user} = useContext(UserContext)
   const [showThankYouMessage, setShowThankYouMessage] = useState(false)
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false)
-  const [optimisticComment, setOptimisticComment] = useState([])
 
   const disableSubmitButton = () => {
     setSubmitButtonDisabled(true)
@@ -58,15 +57,16 @@ const handleSubmit = (e) => {
                 value={user}
                 readOnly/>
             </label> <br></br>
-            <label> Enter your comment: </label>
+            <label> Enter your comment: </label> <br></br>
                 <textarea
+                required
                 type="text"
                 id="add-comment"
                 placeholder="Type comment here..."
                 value={comment}
                 onChange={handleChange}
                 rows="5"
-                cols="50"/>
+                cols="50"/> <br></br>
         <button type="submit" disabled={submitButtonDisabled} >Submit Comment</button>
         {error ? <p>{error} </p> : null }
         {showThankYouMessage ? <p>Comment posted successfully!</p> : null}
@@ -75,4 +75,5 @@ const handleSubmit = (e) => {
         </div>
     )
 }
+
 

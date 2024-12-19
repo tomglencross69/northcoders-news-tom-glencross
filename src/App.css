@@ -241,6 +241,37 @@ font-size: 1rem;
   border: solid rgb(69, 68, 68);
 }
 
+.article-comment-form{
+  overflow: hidden;
+}
+
+/*Topics nav*/
+.topics-nav-component{
+  border: solid rgb(69, 68, 68)
+}
+
+.topics-nav-list{
+  display:flex;
+  text-decoration: none;
+  list-style-type: none;
+  color: inherit;
+  
+
+}
+.topic-card-link{
+  text-decoration: none;
+  color: inherit
+}
+
+.topic-card {
+ display: flex;
+ margin-left: 20px;
+}
+
+#topic-card-title{
+  margin-right: 10px;
+}
+
 /*Footer styling*/
 .footer-component {
   color: white;
