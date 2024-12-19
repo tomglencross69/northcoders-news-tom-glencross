@@ -3,6 +3,7 @@ import { useParams} from "react-router"
 import { useEffect, useState } from "react"
 import { getAllArticles } from "../api"
 import CommentList from "./CommentList"
+import TopicsNav from "./TopicsNav"
 
 export default function IndividualArticleList () {
 const {article_id} = useParams()

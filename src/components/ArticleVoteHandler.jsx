@@ -57,7 +57,6 @@ const handleClickDown = () => {
         <>
         <p>Votes: {votes + localArticleVotes}</p>
         <button onClick={handleClickUp} disabled={upButtonDisabled} className="up-vote-button">Vote +1</button>
-        {error ? <p>{error} </p> : null }
         <button onClick={handleClickDown} disabled={downButtonDisabled} className="down-vote-button">Vote -1</button>
         {error ? <p>{error} </p> : null }
         {showThankYouMessage ? <p>Thank you for voting!</p> : null}

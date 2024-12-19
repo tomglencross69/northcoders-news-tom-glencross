@@ -3,29 +3,26 @@ import { deleteArticleComment } from "../api"
 import { useState, useContext } from "react"
 import { UserContext } from "../contexts/UserContext"
 
-export default function CommentCard ({currentComment}) {
+export default function CommentCard ({currentComment, setComments, setDeletionError, setCommentDeletionMessage}) {
     const date = dateConversion(currentComment.created_at)
     const [buttonDisabled, setButtonDisabled] = useState(false)
     const {user} = useContext(UserContext)
     const [error, setError] = useState(null)
-    const [showDeletedMessage, setShowDeletedMessage] = useState(null)
-
-    const deletedMessage = () => {
-        setShowDeletedMessage(true)
-    }
-
-    const disableDeleteButton = () => {
-setButtonDisabled(true)
-}
 
 const handleDeleteClick = () => {
+    setButtonDisabled(true)
+
+    setComments((comments) => comments.filter((comment) => comment.comment_id !== currentComment.comment_id))
+
+
     deleteArticleComment(currentComment.comment_id)
     .then(()=>{
-        disableDeleteButton()
-        deletedMessage()
+        setCommentDeletionMessage("Comment successfully deleted")
     })
     .catch((err)=>{
-        setError("Comment deletion not successful (˃̣̣̥ᯅ˂̣̣̥) please try again!")
+        setComments((prevComments) => [...prevComments, currentComment])
+        setDeletionError("Comment deletion not successful (˃̣̣̥ᯅ˂̣̣̥) please try again!")
+        setButtonDisabled(false)
     })
 }
     
@@ -40,8 +37,6 @@ const handleDeleteClick = () => {
             <p id="comment-card-body">{currentComment.body}</p>
             </div>
             {currentComment.author === user ? <button onClick={handleDeleteClick} disabled={buttonDisabled}>Delete Comment</button> : null}
-            {error ? <p>{error} </p> : null }
-            {showDeletedMessage ? <p>Comment successfully deleted</p> : null}
     </li>
     </div>
     )

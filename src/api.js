@@ -65,8 +65,8 @@ export const updateArticleVotes = (article_id, down) => {
 export const postComment = (newComment, article_id) => {
     return northcodersNewsBaseURL
     .post(`/articles/${article_id}/comments`, newComment)
-    .then(()=> {
-        console.log("comment posted")
+    .then((response)=> {
+        return response.data.comment
     })
 }
 

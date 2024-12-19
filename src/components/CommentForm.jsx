@@ -1,47 +1,38 @@
 import { postComment } from "../api"
 import { useState, useContext } from "react"
 import { UserContext } from "../contexts/UserContext"
-import { useFormStatus } from "react-dom"
 
-export default function CommentForm ({article_id}) {
-  const [comment, setComment] = useState("")  
+export default function CommentForm ({article_id, setComments}) {
+  const [enteredComment, setEnteredComment] = useState("")  
   const [error, setError] = useState(null)
   const {user} = useContext(UserContext)
   const [showThankYouMessage, setShowThankYouMessage] = useState(false)
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false)
 
-  const disableSubmitButton = () => {
-    setSubmitButtonDisabled(true)
-  }
-
-  const thankYouMessage = () => {
-    setShowThankYouMessage(true)
-}
-
 const handleSubmit = (e) => {
     e.preventDefault(e)
-    console.log("submitted")
-    
     const newComment = {
-        username: user,
-        body: comment
+      username: user,
+      body: enteredComment
     }
-    
-       postComment(newComment, article_id)
-       .then(()=>{
-           thankYouMessage()
-           disableSubmitButton()
+    if (enteredComment.trim() === ""){
+      return setError("Comment cannot be empty!")
+    }
+    setError(null)
+    setSubmitButtonDisabled(true)
+    postComment(newComment, article_id)
+       .then((newlyPostedComment)=>{
+        setComments((comments) => [newlyPostedComment, ...comments])
+        setShowThankYouMessage(true)
            console.log("submitted comment")
-           setComment('') 
+           setEnteredComment('') 
         }).catch((err)=>{
             console.log(err)
             setError("Your submission was not successful (˃̣̣̥ᯅ˂̣̣̥) please try again!")
         })
-       
 }
-
   const handleChange = (e) => {
-    setComment(e.target.value)
+    setEnteredComment(e.target.value)
     console.log(e.target.value)
   }
   
@@ -59,11 +50,10 @@ const handleSubmit = (e) => {
             </label> <br></br>
             <label> Enter your comment: </label> <br></br>
                 <textarea
-                required
                 type="text"
                 id="add-comment"
                 placeholder="Type comment here..."
-                value={comment}
+                value={enteredComment}
                 onChange={handleChange}
                 rows="5"
                 cols="50"/> <br></br>
