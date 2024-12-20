@@ -56,7 +56,7 @@ list-style-type: none
 }
 
 .main-articles-list-component{
-  display: flex;
+  display: grid;
   flex-wrap: wrap; 
   gap: 16px; 
   justify-content: center; 
@@ -294,7 +294,6 @@ font-size: 1rem;
 .sort-by-component{
   border: solid rgb(69, 68, 68);
   display: grid;
-
 }
 
 .drop-down{
