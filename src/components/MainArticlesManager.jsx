@@ -36,7 +36,9 @@ return (
     <div className="manager-component">
         <p className="component-label">main articles manager component</p>
         <ul className="main-articles-list-component">
-            <SortByList articles={articles} setArticles={setArticles}/>
+            {!topic_name && (
+                <SortByList articles={articles} setArticles={setArticles}/>
+            )}
          {articles.map((currentArticle)=> {
         return <MainArticleCard currentArticle={currentArticle} key={currentArticle.article_id}/>
         })}

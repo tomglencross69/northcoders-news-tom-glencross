@@ -45,22 +45,21 @@ export default function SortByList ({articles, setArticles}) {
         setMakeSortQuery(true)
         updateURL()
     }
-    
     const updateURL = () => {
         const params = new URLSearchParams()
         if (selectedSortByOption) params.set('sort_by', selectedSortByOption)
         if (selectedOrderOption) params.set('order', selectedOrderOption)
         setSearchParams(params)
-    }
-    
-    useEffect(()=> {
-        const sortBy = searchParams.get('sort_by')
-        const order = searchParams.get('order')
-    
-        if (sortBy) setSelectedSortByOption(sortBy)
-        if (order) setSelectedOrderOption(order)
-    }, [searchParams])
-    
+}
+
+useEffect(()=> {
+    const sortBy = searchParams.get('sort_by')
+    const order = searchParams.get('order')
+
+    if (sortBy) setSelectedSortByOption(sortBy)
+    if (order) setSelectedOrderOption(order)
+}, [searchParams])
+
    useEffect(()=>{
     if (makeSortQuery) {
         setIsLoading(true)
@@ -85,6 +84,8 @@ export default function SortByList ({articles, setArticles}) {
         })  
     }
 }, [selectedSortByOption, selectedOrderOption, makeSortQuery])
+
+
 
 if (isLoading) return <p>Loading...</p>
 if (isError) return <p>Error fetching....</p>
