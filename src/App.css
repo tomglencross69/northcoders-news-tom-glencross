@@ -247,7 +247,8 @@ font-size: 1rem;
 
 /*Topics nav*/
 .topics-nav-component{
-  border: solid rgb(69, 68, 68)
+  border: solid rgb(69, 68, 68);
+  
 }
 
 .topics-nav-list{
@@ -260,17 +261,33 @@ font-size: 1rem;
 }
 .topic-card-link{
   text-decoration: none;
-  color: inherit
+  color: inherit;
+  
 }
 
 .topic-card {
  display: flex;
  margin-left: 20px;
+ 
 }
 
 #topic-card-title{
   margin-right: 10px;
+
 }
+
+/*SortBy Component*/
+.sort-by-component{
+  border: solid rgb(69, 68, 68);
+  display: flex;
+
+}
+
+
+.drop-down{
+color: black;
+}
+
 
 /*Footer styling*/
 .footer-component {

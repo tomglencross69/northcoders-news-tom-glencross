@@ -17,7 +17,6 @@ export default function IndividualArticleCard ({individualArticle}) {
             <p id="individual-article-card-author">by {individualArticle.author}</p>
             <p id="individual-article-card-date">Article created: {date}</p>
             <p id="individual-article-card-comment-count">Comments ({individualArticle.comment_count})</p>
-            {/* <p id="individual-article-card-vote-count">Votes ({individualArticle.votes})</p> */}
             <ArticleVoteHandler votes={individualArticle.votes} article_id={individualArticle.article_id}/>
             <p id="individual-article-card-body">({individualArticle.body})</p>
             </div>
