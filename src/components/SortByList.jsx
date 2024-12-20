@@ -109,7 +109,7 @@ if (isError) return <p>Error fetching....</p>
             value={selectedOrderValue}
             options={orderOptions}
             onChange={handleOrderChange}/>
-            <button onClick={handleSortButtonClick}>Sort!</button>
+            <button className="sort-by-button" onClick={handleSortButtonClick}>Sort!</button>
         </div>
     )
 }
