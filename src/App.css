@@ -276,6 +276,19 @@ font-size: 1rem;
 
 }
 
+/*SortBy Component*/
+.sort-by-component{
+  border: solid rgb(69, 68, 68);
+  display: flex;
+
+}
+
+
+.drop-down{
+color: black;
+}
+
+
 /*Footer styling*/
 .footer-component {
   color: white;

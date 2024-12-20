@@ -4,7 +4,7 @@ const northcodersNewsBaseURL = axios.create({
     baseURL: "https://tomglencross-nc-news-project.onrender.com/api/"
 })
 
-export const getAllArticles = (article_id, topic_name) => {
+export const getAllArticles = (article_id, topic_name, sort_by_term, order_by_term) => {
 if (article_id) {
     return northcodersNewsBaseURL
     .get(`/articles/${article_id}`)
@@ -23,6 +23,51 @@ else if (topic_name) {
     .catch((error)=>{
         console.log(error, "error returning article by category")
     })  
+}
+else if (sort_by_term && order_by_term){
+    return northcodersNewsBaseURL
+    .get(`articles`, {
+        params: {sort_by: sort_by_term, order: order_by_term}
+       
+    })
+    .then((response)=>{
+        console.log(response.request.responseURL, "reponse in sortby orderby")
+        return response.data.articles
+    })
+    .catch((error)=>{
+        console.log(error, "error returning article by sort by and order by")
+    })  
+
+}
+else if (sort_by_term){
+    return northcodersNewsBaseURL
+    .get(`articles`, {
+        params: {sort_by: sort_by_term}
+       
+    })
+    .then((response)=>{
+        console.log(response.request.responseURL, "reponse in sortby")
+        return response.data.articles
+    })
+    .catch((error)=>{
+        console.log(error, "error returning article by sort by")
+    })  
+
+}
+else if (order_by_term){
+    return northcodersNewsBaseURL
+    .get(`articles`, {
+        params: {order: order_by_term}
+       
+    })
+    .then((response)=>{
+        console.log(response.request.responseURL, "reponse in order orderby")
+        return response.data.articles
+    })
+    .catch((error)=>{
+        console.log(error, "error returning article by order by")
+    }) 
+
 }
 else return northcodersNewsBaseURL
 .get(`/articles`)

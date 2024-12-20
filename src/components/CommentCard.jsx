@@ -20,7 +20,7 @@ const handleDeleteClick = () => {
         setCommentDeletionMessage("Comment successfully deleted")
     })
     .catch((err)=>{
-        setComments((prevComments) => [...prevComments, currentComment])
+        setComments((prevComments) => [currentComment, ...prevComments])
         setDeletionError("Comment deletion not successful (˃̣̣̥ᯅ˂̣̣̥) please try again!")
         setButtonDisabled(false)
     })

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import StateManager from './components/StateManager'
+import MainArticlesManager from './components/MainArticlesManager'
 import { Navigate } from 'react-router'
 import {Routes, Route} from "react-router"
 import IndividualArticleList from './components/IndividualArticleList'
@@ -45,8 +45,8 @@ if (isError) return <p>Error fetching....</p>
         <Header topics={topics}/>
         <Routes>
           <Route path ="/" element={<Navigate to="/articles"/>} />
-          <Route path="/articles" element={<StateManager/>}/>
-          <Route path="/articles/topics/:topic_name" element={<StateManager/>}/>
+          <Route path="/articles" element={<MainArticlesManager/>}/>
+          <Route path="/articles/topics/:topic_name" element={<MainArticlesManager/>}/>
           <Route path ="/articles/:article_id" element={<IndividualArticleList/>}/>
           <Route path ="/articles/:article_id/comments" element={<CommentList/>}/>
         </Routes>
